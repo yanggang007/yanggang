@@ -18,6 +18,17 @@
     text-shadow: 3px 3px 1px black;
   }
   
+  h2 {
+    background-color: orange;
+    color: white;
+    width: 80%;      /* 增加宽度 */
+    margin: 20px auto;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
   p, li {
     font-size: 16px;
     /* line-height 后而可以跟不同的参数，如果是数字，就是当前字体大小乘上数字 */
@@ -26,7 +37,7 @@
   }
 
   body {
-    width: 600px;
+    width: 900px;
     margin: 0 auto;
     background-color: #FF9500;
     padding: 0 20px 20px 20px;
@@ -37,4 +48,6 @@
   img {
     display: block;
     margin: 0 auto;
-  }
+    max-width: 100%;   /* 保证图片不会超出body宽度 */
+    height: auto;      /* 保持图片比例 */
+}

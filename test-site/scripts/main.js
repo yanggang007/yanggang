@@ -1,5 +1,3 @@
-
-
 // document.querySelector('html').onclick=function(){
 // 	alert('别戳我，我怕疼。');
 // }
@@ -15,29 +13,34 @@ myImage.onclick = function() {
     }
 }
 
-let myButton = document.querySelector('button');
-let myHeading = document.querySelector('h1');
+// 获取标题元素
+const myHeading = document.querySelector('h2');
+// 获取按钮元素
+const myButton = document.querySelector('button');
 
-// function setUserName() {
-//   let myName = prompt('请输入你的名字。');
-//   if(!myName || myName === null) {
-//     setUserName();
-//   } else {
-//     localStorage.setItem('name', myName);
-//     myHeading.innerHTML = 'Mozilla 酷毙了，' + myName;
-//   }
-// }
-
-if(!localStorage.getItem('name')) {
-    setUserName();
-} else {
-    let storedName = localStorage.getItem('name');
-    myHeading.textContent = 'Mozilla 酷毙了，' + storedName;
+// 定义设置用户名的函数
+function setUserName() {
+  const myName = prompt('请输入你的名字：');
+  if (!myName) {
+    setUserName(); // 如果未输入，重新调用
+  } else {
+    localStorage.setItem('name', myName);
+    myHeading.textContent = 'Hi, ' + myName;
+  }
 }
 
+// 检查本地存储是否有用户名
+if (!localStorage.getItem('name')) {
+  setUserName();
+} else {
+  const storedName = localStorage.getItem('name');
+  myHeading.textContent = 'Hi, ' + storedName;
+}
+
+// 点击按钮切换用户
 myButton.onclick = function() {
   setUserName();
-}
+};
 
 //********************************************
 
